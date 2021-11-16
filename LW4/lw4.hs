@@ -13,6 +13,9 @@
 
 --отримання списку фiгур вказаного типу;
 
+--91. знаходження фiгури, яка має спiльнi точки з прямокутником, що охоплює вказану фiгуру;
+--92. перемiщення фiгури на вказаний вектор.
+
 --Хід роботи
 
 
@@ -61,6 +64,8 @@ c = findTriangle [Rectangle 1 2 3 4, Circle 1 2 3, Rectangle 2 3 4 5, Triangle 4
 d = findLabel [Rectangle 1 2 3 4, Circle 1 2 3, Rectangle 2 3 4 5, Triangle 4 5 6 7 8 9, Label 1 2 Consolas 2, Triangle 1 2 3 4 5 6, Circle 4 5 6, Label 2 3 LucidaConsole 4] 
 --[Label 1 2 Consolas 2,Label 2 3 LucidaConsole 4]
 
+--Завдання 2: 
+
 f :: (Shape, Shape) -> Bool 
 f (Rectangle x1 y1 x2 y2, Circle x y radius) = 
     if (abs (x2-x1) /= abs (y2-y1)) then False
@@ -73,6 +78,8 @@ f (_,_) = False
 y = f (Rectangle 2 4 4 2, Circle 3 3 1) --True
 z = f (Rectangle 2 4 4 2, Circle 3 2 1) --False
 p =  f (Rectangle 2 4 4 2, Label 1 2 Consolas 3) --False
+
+--Завдання 3: 
 
 vectorTrans :: (Shape, Int, Int) -> Shape
 vectorTrans (Rectangle x1 x2 x3 x4, xs, ys) =  Rectangle (x1 + xs) (x2 + ys) (x3 + xs) (x4 + ys)
