@@ -50,6 +50,11 @@ isPal1Console = do
     putStr "Result:\n"
     print (isPalindrome1 arr)
 
+--isPal1Console
+--[1,2,1]: True
+--[1,2,1,1]: False
+
+
 isPal2Console::IO()
 isPal2Console = do
     putStr "Enter array\n"
@@ -57,6 +62,11 @@ isPal2Console = do
     let arr = read line :: [Int]
     putStr "Result:\n"
     print (isPalindrome2 arr)
+
+--isPal2Console
+--[1,2,1]: True
+--[1,2,1,1]: False
+
 
 merge1Console :: IO()
 merge1Console = do
@@ -68,6 +78,10 @@ merge1Console = do
     putStr "Result:\n"
     print (merge1 arr1 arr2)
 
+--merge1Console
+--[1,2,3] [1,2,3,4]: [1,1,2,2,3,3]
+--[1,2,3,4] [1,2,3]: [1,1,2,2,3,3]
+
 merge2Console :: IO()
 merge2Console = do
     putStr "Enter first array\n"
@@ -78,6 +92,10 @@ merge2Console = do
     let arr2 = read line2 :: [Int]
     putStr "Result:\n"
     print (merge2 arr1 arr2)
+
+--merge2Console
+--[1,2,3] [1,2,3,4]: [1,1,2,2,3,3]
+--[1,2,3,4] [1,2,3]: [1,1,2,2,3,3]
 
 
 --Завдання 1.В: 
@@ -93,6 +111,10 @@ isPal1FileToConsole = do
     print (isPalindrome1 arr)
     hClose inp
 
+--isPal1FileToConsole
+--[1,2,1]: True
+--[1,2,1,1]: False
+
 isPal2FileToConsole::IO()
 isPal2FileToConsole = do
     inp <- openFile "inputIsPal.txt" ReadMode
@@ -102,6 +124,10 @@ isPal2FileToConsole = do
     putStr "Result:\n"
     print (isPalindrome2 arr)
     hClose inp
+
+--isPal2FileToConsole
+--[1,2,1]: True
+--[1,2,1,1]: False
 
 merge1FileToConsole::IO()
 merge1FileToConsole = do
@@ -115,6 +141,10 @@ merge1FileToConsole = do
     putStr "Result:\n"
     print (merge1 arr1 arr2)
 
+--merge1FileToConsole
+--[1,2,3] [1,2,3,4]: [1,1,2,2,3,3]
+--[1,2,3,4] [1,2,3]: [1,1,2,2,3,3]
+
 
 merge2FileToConsole::IO()
 merge2FileToConsole = do
@@ -127,6 +157,10 @@ merge2FileToConsole = do
     putStr (line2 ++ "\n")
     putStr "Result:\n"
     print (merge2 arr1 arr2)
+
+--merge2FileToConsole
+--[1,2,3] [1,2,3,4]: [1,1,2,2,3,3]
+--[1,2,3,4] [1,2,3]: [1,1,2,2,3,3]
 
 --Завдання 1.Г: 
 
@@ -142,6 +176,8 @@ isPal1FileToFile = do
     hClose inp
     hClose out
 
+--isPal1FileToFile
+
 isPal2FileToFile::IO()
 isPal2FileToFile = do
     inp <- openFile "inputIsPal.txt" ReadMode
@@ -153,6 +189,8 @@ isPal2FileToFile = do
     hPrint out (isPalindrome2 arr)
     hClose inp
     hClose out
+
+--isPal2FileToFile
 
 merge1FileToFile::IO()
 merge1FileToFile = do
@@ -169,6 +207,8 @@ merge1FileToFile = do
     hClose inp
     hClose out
 
+--merge1FileToFile
+
 merge2FileToFile::IO()
 merge2FileToFile = do
     inp <- openFile "inputMerge.txt" ReadMode
@@ -183,6 +223,8 @@ merge2FileToFile = do
     hPrint out (merge2 arr1 arr2)
     hClose inp
     hClose out
+
+--merge2FileToFile
 
 --Висновок: Ознайомились з модульною органiзацiєю програм та засобами введення-
 --виведення.
