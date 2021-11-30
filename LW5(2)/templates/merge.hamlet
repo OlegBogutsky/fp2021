@@ -1,0 +1,7 @@
+<p>Лабораторна роботи № 5(2)
+<h1> Введіть два списки
+<form method=post action@{MergeR}>
+    <input type=text name=content1>
+    <input type=text name=content2>
+    <input type=submit>
+<p><a href=@{PalR}>Перше завдання

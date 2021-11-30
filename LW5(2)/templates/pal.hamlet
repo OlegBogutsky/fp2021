@@ -1,0 +1,6 @@
+<p>Лабораторна роботи № 5(2)
+<h1> Введіть список
+<form method=post action@{PalR}>
+    <input type=text name=content>
+    <input type=submit>
+<p><a href=@{MergeR}>Друге завдання

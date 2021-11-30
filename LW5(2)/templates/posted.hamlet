@@ -1,0 +1,6 @@
+<p>Чи є список паліндромом?
+<p>#{isPalindrome postedText}
+<hr>
+<p> [1,2,1] -- True
+<p> [1,2,2] -- False
+<p><a href=@{PalR}>Назад
