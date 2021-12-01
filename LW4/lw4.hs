@@ -73,7 +73,7 @@ f (Rectangle x1 y1 x2 y2, Circle x y radius)
     |y - y1 /= y2 - y = False 
     |x2 - 2*radius /= x1 = False 
     |otherwise = True
-f (Rectangle x1 y1 x2 y2, Label a b font r) = b - r == y1 && y1 + r == b && a > x1 && a < x2
+f (Rectangle x1 y1 x2 y2, Label a b font r) = b + r == y1 && y2 == b && a >= x1 && a <= x2
 f (Rectangle x1 y1 x2 y2, Triangle a1 b1 a2 b2 a3 b3) =
     a1 >= x1 && a1 <= x2 && a2 >= x1 && a2 <= x2 && a3 >= x1 && a3 <= x2 &&
     b1 <= y1 && b1 >= y2 && b2 <= y1 && b2 >= y2 && b2 <= y1 && b2 >= y2 &&
@@ -84,7 +84,11 @@ f (_,_) = False
 
 y = f (Rectangle 2 4 4 2, Circle 3 3 1) --True
 z = f (Rectangle 2 4 4 2, Circle 3 2 1) --False
+k1 = f (Rectangle 0 3 3 0, Label 0 0 Consolas 3) --True
 p =  f (Rectangle 2 4 4 2, Label 1 2 Consolas 3) --False
+p1 = f (Rectangle 0 3 3 0, Triangle 0 2 2 3 3 2) --True
+p2 = f (Rectangle 0 3 3 0, Triangle 0 2 2 3 4 2) --False
+
 
 --Завдання 3: 
 
