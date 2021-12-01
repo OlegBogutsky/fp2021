@@ -67,12 +67,19 @@ d = findLabel [Rectangle 1 2 3 4, Circle 1 2 3, Rectangle 2 3 4 5, Triangle 4 5 
 --Завдання 2: 
 
 f :: (Shape, Shape) -> Bool 
-f (Rectangle x1 y1 x2 y2, Circle x y radius) = 
-    if (abs (x2-x1) /= abs (y2-y1)) then False
-    else if (x - x1 /= x2 - x) then False
-    else if (y - y1 /= y2 - y) then False 
-    else if (x2 - 2*radius /= x1) then False 
-    else True
+f (Rectangle x1 y1 x2 y2, Circle x y radius)
+    |abs (x2-x1) /= abs (y2-y1) = False
+    |x - x1 /= x2 - x = False
+    |y - y1 /= y2 - y = False 
+    |x2 - 2*radius /= x1 = False 
+    |otherwise = True
+f (Rectangle x1 y1 x2 y2, Label a b font r) = b - r == y1 && y1 + r == b && a > x1 && a < x2
+f (Rectangle x1 y1 x2 y2, Triangle a1 b1 a2 b2 a3 b3) =
+    a1 >= x1 && a1 <= x2 && a2 >= x1 && a2 <= x2 && a3 >= x1 && a3 <= x2 &&
+    b1 <= y1 && b1 >= y2 && b2 <= y1 && b2 >= y2 && b2 <= y1 && b2 >= y2 &&
+    ((a1 == x1 || a1 == x2) || (b1 == y1 || b1 == y2)) && 
+    ((a2 == x1 || a2 == x2) || (b2 == y1 || b2 == y2)) &&
+    ((a3 == x1 || a3 == x2) || (b3 == y1 || b3 == y2))
 f (_,_) = False 
 
 y = f (Rectangle 2 4 4 2, Circle 3 3 1) --True
